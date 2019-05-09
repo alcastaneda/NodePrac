@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+    const count = 1;
+    const segment = '<article>First Name: <input type="text" name="firstName'+count.toString()+'" required>Last Name: <input type="text" name="lastName'+count.toString()+'"required>Is this an Employee? <input type="hidden" name="employee'+count.toString()+'"value="false" /><input type="checkbox" name="employee'+count.toString()+'" value="true"></article>';
+    function addSection() {
+      $('section').append(segment);
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Enter Employee and Dependant Information</h1>
+    <form action="/getPrice" method="POST">
+      <section>
+        <article>
+          First Name: <input type="text" name="firstName0" required>
+          Last Name: <input type="text" name="lastName0" required>
+          <input type="hidden" name="employee0" value="false">
+          Is this an Employee? <input type="checkbox" name="employee0" value="true">
+        </article>
+      </section>
+      <input type="submit">
+    </form>
+    <button onclick='addSection();'>Click</button>
+  </body>
+</html>
